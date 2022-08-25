@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
     Vector3 target;
     Vector3 startpos;
 
-    [SerializeField] FixedJoystick joystick;
+    [SerializeField] FloatingJoystick joystick;
     public bool w = true, a = true, s = true, d = true;
     void Start()
     {
