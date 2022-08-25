@@ -34,12 +34,11 @@ public class EndGameController : MonoBehaviour
             deathCountController.IncreaseDeathCount();
         }
         Time.timeScale = 1;
-        // AdManager.instance.PlayNormalAd(() =>
-        // {
-        /* Loading the current scene. */
-        //     SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        // });
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        AdManager.instance.PlayNormalAd(() =>
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        });
+        // SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     // public void RestartWithAd()
