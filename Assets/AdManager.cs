@@ -16,9 +16,11 @@ public class AdManager : MonoBehaviour, IUnityAdsListener
     AudioSource Sound;
 
 #if UNITY_IOS
-            string gameId = "4896284";
+    string gameId = "4896284";
 #elif UNITY_ANDROID
     string gameId = "4896285";
+#else
+    string gameId = "4896284";
 #endif
 
     Action OnSuccessAd;

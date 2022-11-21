@@ -34,10 +34,20 @@ public class EndGameController : MonoBehaviour
             deathCountController.IncreaseDeathCount();
         }
         Time.timeScale = 1;
-        AdManager.instance.PlayNormalAd(() =>
+        // on webGl
+        if (Application.platform == RuntimePlatform.Android)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        });
+            AdManager.instance.PlayNormalAd(() =>
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            });
+        }
+        else
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+
+
         // SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
